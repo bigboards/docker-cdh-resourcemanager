@@ -13,6 +13,12 @@ RUN apt-get update \
 ADD docker_files/resourcemanager-run.sh /apps/resourcemanager-run.sh
 RUN chmod a+x /apps/resourcemanager-run.sh
 
+# declare the volumes
+RUN mkdir /etc/hadoop/conf.bb && \
+    update-alternatives --install /etc/hadoop/conf hadoop-conf /etc/hadoop/conf.bb 1 && \
+    update-alternatives --set hadoop-conf /etc/hadoop/conf.bb
+VOLUME /etc/hadoop/conf.bb
+
 # internal ports
 EXPOSE 8030 8031
 
