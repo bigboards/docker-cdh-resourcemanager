@@ -1,5 +1,6 @@
 # Pull base image.
-FROM bigboards/cdh-base-__arch__
+# FROM bigboards/cdh-base-__arch__
+FROM bigboards/cdh-base-hadoop-__arch__
 
 MAINTAINER bigboards
 USER root 
